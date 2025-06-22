@@ -92,7 +92,8 @@ public class SecurityConfig {
                     "/products/search",
                     "/products/{id}",
                     "/swagger-ui/**",
-                    "/v3/api-docs/**"
+                    "/v3/api-docs/**",
+                    "/auth/users/{id}"
                 ).permitAll()
 
                 // Все остальные маршруты — только для авторизованных пользователей
