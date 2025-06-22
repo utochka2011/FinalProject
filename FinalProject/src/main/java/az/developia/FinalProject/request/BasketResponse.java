@@ -13,7 +13,8 @@ public class BasketResponse {
     private String model;
     private String description;
     private Double price;
-    private String size;
+    private Integer memory;
+    private String category;
     private String imgUrl;
     private Integer rating;
     private Long ownerId;

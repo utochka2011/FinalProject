@@ -70,8 +70,9 @@ public class BasketService {
                     response.setId(product.getId());
                     response.setBrand(product.getBrand());
                     response.setModel(product.getModel());
+                    response.setCategory(product.getCategory());
                     response.setDescription(product.getDescription());
-                    response.setSize(product.getSize());
+                    response.setMemory(product.getMemory());
                     response.setPrice(product.getPrice());
                     response.setImgUrl(product.getImgUrl());
                     response.setRating(product.getRating());

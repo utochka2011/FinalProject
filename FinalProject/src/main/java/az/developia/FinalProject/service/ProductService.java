@@ -32,7 +32,8 @@ public class ProductService {
         product.setModel(request.getModel());
         product.setDescription(request.getDescription());
         product.setPrice(request.getPrice());
-        product.setSize(request.getSize());
+        product.setCategory(request.getCategory());
+        product.setMemory(request.getMemory());
         product.setImgUrl(request.getImgUrl());
         product.setRating(request.getRating());
         product.setOwnerId(user.getId());
@@ -94,9 +95,10 @@ public class ProductService {
         ProductEntity existing = getMyProductById(id);
         existing.setBrand(request.getBrand());
         existing.setModel(request.getModel());
+        existing.setCategory(request.getCategory());
         existing.setDescription(request.getDescription());
         existing.setPrice(request.getPrice());
-        existing.setSize(request.getSize());
+        existing.setMemory(request.getMemory());
         existing.setImgUrl(request.getImgUrl());
         existing.setRating(request.getRating());
         productRepository.save(existing);

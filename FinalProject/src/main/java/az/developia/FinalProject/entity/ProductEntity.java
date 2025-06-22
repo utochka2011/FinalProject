@@ -19,12 +19,12 @@ public class ProductEntity {
     private String model;
     private String description;
     private Double price;
-    private String size;
-
+    private Integer memory;
+private String category;
     @JsonProperty("imageUrl")
     private String imgUrl;
 
     private Integer rating;
-
+    @Column(name = "owner_id")
     private Long ownerId;
 }

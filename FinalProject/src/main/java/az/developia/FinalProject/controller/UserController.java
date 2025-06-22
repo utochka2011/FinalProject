@@ -48,4 +48,9 @@ public class UserController {
 		String username = SecurityUtil.getCurrentUsername();
 		return userService.getUserInfo(username);
 	}
+    @GetMapping("/users/{id}")
+    public ResponseEntity<UserEntity> getUserById(@PathVariable Long id) {
+        UserEntity user = userService.getUserById(id);
+        return ResponseEntity.ok(user);
+    }
 }

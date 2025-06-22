@@ -31,6 +31,7 @@ public class UserService {
             throw new RuntimeException("такой username уже существует");
         }
 
+        
         UserEntity user = new UserEntity();
         user.setUsername(userEntity.getUsername());
         user.setSurname(userEntity.getSurname());
@@ -57,6 +58,10 @@ public class UserService {
         return jwtUtil.generateToken(username);
     }
 
+    public UserService(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
+    
     public void logout(String token) {
         SecurityContextHolder.clearContext();
         jwtUtil.invalidateToken(token);
@@ -65,5 +70,10 @@ public class UserService {
     public UserEntity getUserInfo(String username) {
         return userRepository.findByUsername(username)
                 .orElseThrow(() -> new RuntimeException("пользователь не найден"));
+    }
+    
+    public UserEntity getUserById(Long id) {
+        return userRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("User not found"));
     }
 }
